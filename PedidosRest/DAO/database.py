@@ -1,10 +1,10 @@
 from pymongo import MongoClient
 
-DATABASE_URL = 'mongodb://localhost:27017'
+DATABASE_URL = 'mongodb://localhost:27017/'
 DATABASE_NAME = 'ShopiteszRest'
 
 class Conexion:
-    def __int__(self):
+    def __init__(self):
         self.cliente = MongoClient(DATABASE_URL)
         self.db = self.cliente[DATABASE_NAME]
 
