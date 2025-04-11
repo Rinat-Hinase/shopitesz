@@ -1,5 +1,6 @@
 from pydantic import BaseModel
 from datetime import datetime, date
+from bson import ObjectId
 
 class Item(BaseModel):
     idProducto:int
@@ -16,6 +17,7 @@ class PedidoInsert(BaseModel):
     subtotal:float
     total:float
     estatus:str | None = 'Captura'
+    fechaRegistro: datetime | None = datetime.today()
     detalle: list[Item]
 
 class Pago(BaseModel):
