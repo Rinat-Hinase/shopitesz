@@ -296,7 +296,9 @@ class PedidoDAO:
             else:
                 salida.estatus = "ERROR"
                 salida.mensaje = "Pedido no encontrado en la vista."
+                salida.pedido = None
         except Exception as e:
             salida.estatus = "ERROR"
             salida.mensaje = f"Error al consultar el historial de tracking: {str(e)}"
         return salida
+    
